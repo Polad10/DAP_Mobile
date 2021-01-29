@@ -6,8 +6,30 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Data\timeline.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\timeline.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.4.0.39" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.4.0.39" />
+    <PackageReference Include="Syncfusion.Xamarin.SfListView" Version="18.4.0.39" />
     <PackageReference Include="Xamarin.Forms" Version="5.0.0.1931" />  
     <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Themes\LightTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Dashboard\DailyTimelinePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Dashboard\Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

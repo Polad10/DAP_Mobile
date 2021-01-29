@@ -2,6 +2,7 @@
 <Shell xmlns="http://xamarin.com/schemas/2014/forms" 
        xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
        xmlns:local="clr-namespace:DAP_Mobile.Views"
+       xmlns:dashboard="clr-namespace:DAP_Mobile.Views.Dashboard"
        Title="DAP_Mobile"
        x:Class="DAP_Mobile.AppShell">
 
@@ -30,7 +31,7 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="About" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate local:AboutPage}" />
+        <ShellContent Title="DailyTimeline" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate dashboard:DailyTimelinePage}" />
         <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </TabBar>
 

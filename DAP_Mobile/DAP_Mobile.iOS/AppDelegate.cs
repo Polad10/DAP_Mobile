@@ -1,4 +1,7 @@
-﻿using System;
+using Syncfusion.ListView.XForms.iOS;
+using Syncfusion.XForms.iOS.Buttons;
+using Syncfusion.XForms.iOS.Border;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -24,6 +27,9 @@ namespace DAP_Mobile.iOS
         {
             global::Xamarin.Forms.Forms.SetFlags("CollectionView_Experimental");
             global::Xamarin.Forms.Forms.Init();
+            SfListViewRenderer.Init();
+            SfButtonRenderer.Init();
+            SfBorderRenderer.Init();
             LoadApplication(new App());
 
             return base.FinishedLaunching(app, options);
