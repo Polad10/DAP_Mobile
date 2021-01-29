@@ -8,9 +8,10 @@ namespace DAP_Mobile
 {
     public partial class App : Application
     {
-
         public App()
         {
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("Mzg5NDg3QDMxMzgyZTM0MmUzMGtrcnNBd0JJMlY3dDUxY0cvR2ZvUTZmK21PSjBpTGgvRFNzVldRNmN2eEE9");
+
             InitializeComponent();
 
             DependencyService.Register<MockDataStore>();
