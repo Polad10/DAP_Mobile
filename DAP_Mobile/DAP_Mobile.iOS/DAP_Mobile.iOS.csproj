@@ -68,11 +68,11 @@
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <BundleResource Include="Resources\UIFontIcons.ttf" />
     <BundleResource Include="Resources\Montserrat-Bold.ttf" />
     <BundleResource Include="Resources\Montserrat-Medium.ttf" />
     <BundleResource Include="Resources\Montserrat-Regular.ttf" />
     <BundleResource Include="Resources\Montserrat-SemiBold.ttf" />
+    <BundleResource Include="Resources\UIFontIcons.ttf" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
@@ -155,5 +155,11 @@
       <Project>{A681FF19-0EF1-48FB-A37A-4E717C89E5CB}</Project>
       <Name>DAP_Mobile</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\timer_wf.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\users_wf.png" />
   </ItemGroup>
 </Project>

@@ -14,6 +14,12 @@
 
     <Shell.Resources>
         <ResourceDictionary>
+            <OnPlatform x:TypeArguments="x:String"
+                        x:Key="fonts"
+                        iOS="custom_icons"
+                        Android="custom_icons.ttf" />
+
+
             <Style x:Key="BaseStyle" TargetType="Element">
                 <Setter Property="Shell.BackgroundColor" Value="{StaticResource Primary}" />
                 <Setter Property="Shell.ForegroundColor" Value="White" />
@@ -31,8 +37,8 @@
     </Shell.Resources>
 
     <TabBar>
-        <ShellContent Title="DailyTimeline" Icon="icon_about.png" Route="AboutPage" ContentTemplate="{DataTemplate dashboard:DailyTimelinePage}" />
-        <ShellContent Title="Browse" Icon="icon_feed.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
+        <ShellContent Title="Daily Timeline" Route="AboutPage" Icon="timer_wf.png"  ContentTemplate="{DataTemplate dashboard:DailyTimelinePage}" />
+        <ShellContent Title="Patients" Icon="users_wf.png" ContentTemplate="{DataTemplate local:ItemsPage}" />
     </TabBar>
 
     <!--
