@@ -1,4 +1,4 @@
-﻿using DAP_Mobile.Models.Dashboard;
+﻿using DAP_Mobile.Models;
 using System.Collections.ObjectModel;
 using System.Runtime.Serialization;
 using Xamarin.Forms.Internals;
@@ -28,8 +28,8 @@ namespace DAP_Mobile.ViewModels.Dashboard
         /// <summary>
         /// Gets or sets a collction of value to be displayed in Daily timeline page.
         /// </summary>
-        [DataMember(Name = "dailyTimeline")]
-        public ObservableCollection<Event> DailyTimeline { get; set; }
+        [DataMember(Name = "appointments")]
+        public ObservableCollection<Appointment> appointments { get; set; }
 
         #endregion
     }

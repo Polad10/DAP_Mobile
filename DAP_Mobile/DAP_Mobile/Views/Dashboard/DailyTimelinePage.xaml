@@ -43,7 +43,7 @@
                         <BoxView HeightRequest="{Binding Source={x:Reference listView}, Path=Height}" HorizontalOptions="Start" 
                      VerticalOptions="Start"   WidthRequest="1" Margin="80,0,0,0" BackgroundColor="{DynamicResource Gray-300}" />
 
-                        <listView:SfListView VerticalOptions="Start" x:Name="listView" ItemsSource="{Binding DailyTimeline}" AutoFitMode="Height"
+                        <listView:SfListView VerticalOptions="Start" x:Name="listView" ItemsSource="{Binding Appointments}" AutoFitMode="Height"
                                  SelectionMode="None" SelectionBackgroundColor="Transparent" AllowSwiping="True" ItemSpacing="0,0,0,20"
                                  IsScrollBarVisible="False">
 
