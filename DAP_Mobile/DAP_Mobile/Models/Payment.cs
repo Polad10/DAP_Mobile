@@ -10,22 +10,22 @@ namespace DAP_Mobile.Models
     [DataContract]
     public class Payment
     {
-        [DataMember]
+        [DataMember(Name = "id")]
         public int Id { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "amount")]
         public Decimal Amount { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "date")]
         public DateTime Date { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "time")]
         public DateTime Time { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "patient")]
         public Patient Patient { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "treatment")]
         public Treatment Treatment { get; set; }
     }
 }

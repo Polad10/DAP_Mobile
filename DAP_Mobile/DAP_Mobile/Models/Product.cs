@@ -10,19 +10,19 @@ namespace DAP_Mobile.Models
     [DataContract]
     public class Product
     {
-        [DataMember]
+        [DataMember(Name = "id")]
         public int Id { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "name")]
         public string Name { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "quantity")]
         public int Quantity { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "price")]
         public Decimal Price { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "treatment")]
         public Treatment Treatment { get; set; }
     }
 }

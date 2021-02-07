@@ -10,25 +10,25 @@ namespace DAP_Mobile.Models
     [DataContract]
     public class Patient
     {
-        [DataMember]
+        [DataMember(Name = "id")]
         public int Id { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "first_name")]
         public string FirstName { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "last_name")]
         public string LastName { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "city")]
         public string City { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "extra_info")]
         public string ExtraInfo { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "dob")]
         public DateTime Dob { get; set; }
 
-        [DataMember]
+        [DataMember(Name = "phone_nr")]
         public string PhoneNr { get; set; }
     }
 }
