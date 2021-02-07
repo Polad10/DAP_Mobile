@@ -8,7 +8,7 @@ namespace DAP_Mobile.Models
 {
     [Preserve(AllMembers = true)]
     [DataContract]
-    class Payment
+    public class Payment
     {
         [DataMember]
         public int Id { get; set; }

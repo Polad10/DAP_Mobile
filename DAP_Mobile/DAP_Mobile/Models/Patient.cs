@@ -8,7 +8,7 @@ namespace DAP_Mobile.Models
 {
     [Preserve(AllMembers = true)]
     [DataContract]
-    class Patient
+    public class Patient
     {
         [DataMember]
         public int Id { get; set; }
