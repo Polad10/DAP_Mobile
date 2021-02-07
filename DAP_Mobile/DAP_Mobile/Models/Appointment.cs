@@ -11,25 +11,25 @@ namespace DAP_Mobile.Models
     [DataContract]
     public class Appointment
     {
-        [DataMember(Name = "id")]
+        [DataMember]
         public int Id { get; set; }
 
-        [DataMember(Name = "date")]
+        [DataMember]
         public DateTime Date { get; set; }
 
-        [DataMember(Name = "time")]
+        [DataMember]
         public DateTime Time { get; set; }
 
-        [DataMember(Name = "icon")]
+        [DataMember]
         public string Icon { get; set; }
 
-        [DataMember(Name = "actions")]
+        [DataMember]
         public string Actions { get; set; }
 
-        [DataMember(Name = "status")]
+        [DataMember]
         public string Status { get; set; }
 
-        [DataMember(Name = "treatment")]
+        [DataMember]
         public Treatment Treatment { get; set; }
     }
 }
