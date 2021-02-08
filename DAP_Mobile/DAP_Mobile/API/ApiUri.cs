@@ -23,9 +23,9 @@ namespace DAP_Mobile.API
             payments = $"{baseUri}payments";
         }
 
-        public static string Appointments(Dictionary<string, string> conditions)
+        public static string Appointments(Dictionary<string, string> conditions = null)
         {
-            if(conditions.Keys.Count == 0)
+            if(conditions == null)
             {
                 return appointments;
             }
@@ -35,9 +35,9 @@ namespace DAP_Mobile.API
             return uri;
         }
 
-        public static string Treatments(Dictionary<string, string> conditions)
+        public static string Treatments(Dictionary<string, string> conditions = null)
         {
-            if (conditions.Keys.Count == 0)
+            if (conditions == null)
             {
                 return treatments;
             }
@@ -47,9 +47,9 @@ namespace DAP_Mobile.API
             return uri;
         }
 
-        public static string Patients(Dictionary<string, string> conditions)
+        public static string Patients(Dictionary<string, string> conditions = null)
         {
-            if (conditions.Keys.Count == 0)
+            if (conditions == null)
             {
                 return patients;
             }
@@ -59,9 +59,9 @@ namespace DAP_Mobile.API
             return uri;
         }
 
-        public static string Payments(Dictionary<string, string> conditions)
+        public static string Payments(Dictionary<string, string> conditions = null)
         {
-            if (conditions.Keys.Count == 0)
+            if (conditions == null)
             {
                 return payments;
             }
@@ -71,9 +71,9 @@ namespace DAP_Mobile.API
             return uri;
         }
 
-        public static string Products(Dictionary<string, string> conditions)
+        public static string Products(Dictionary<string, string> conditions = null)
         {
-            if (conditions.Keys.Count == 0)
+            if (conditions == null)
             {
                 return products;
             }
