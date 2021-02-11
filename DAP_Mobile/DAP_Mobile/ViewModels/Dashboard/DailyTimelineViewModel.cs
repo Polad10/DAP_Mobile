@@ -1,36 +1,31 @@
-﻿using DAP_Mobile.Models;
+﻿using DAP_Mobile.API;
+using DAP_Mobile.Models;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Runtime.Serialization;
-using Xamarin.Forms.Internals;
 
 namespace DAP_Mobile.ViewModels.Dashboard
 {
-    /// <summary>
-    /// ViewModel for Daily Timeline page.
-    /// </summary>
-    [Preserve(AllMembers = true)]
-    [DataContract]
     public class DailyTimelineViewModel : BaseViewModel
     {
-        #region Constructor
-
-        /// <summary>
-        /// Initializes a new instance for the <see cref="DailyTimelineViewModel"/> class.
-        /// </summary>
+        public ObservableCollection<Appointment> Appointments { get; set; }
         public DailyTimelineViewModel()
         {
+            Appointments = new ObservableCollection<Appointment>();
+            Populate(DateTime.Now);
         }
 
-        #endregion
+        public async void Populate(DateTime date)
+        {
+            RestService rest = new RestService();
+            Dictionary<string, string> conditions = new Dictionary<string, string>();
+            conditions["date"] = date.ToUniversalTime().ToString("o");
+            List<Appointment> appointments = await rest.GetAppointments();
 
-        #region Properties
-
-        /// <summary>
-        /// Gets or sets a collction of value to be displayed in Daily timeline page.
-        /// </summary>
-        [DataMember(Name = "appointments")]
-        public ObservableCollection<Appointment> appointments { get; set; }
-
-        #endregion
+            foreach(Appointment appointment in appointments)
+            {
+                Appointments.Add(appointment);
+            }
+        }
     }
 }

@@ -1,13 +1,14 @@
-﻿using DAP_Mobile.ViewModels.Dashboard;
-using System.Reflection;
-using System.Runtime.Serialization.Json;
+﻿using DAP_Mobile.API;
+using DAP_Mobile.Models;
+using DAP_Mobile.ViewModels.Dashboard;
+using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 using Xamarin.Forms.Internals;
 
 namespace DAP_Mobile.DataService
 {
-    /// <summary>
-    /// Data service to load the data from json file.
-    /// </summary>
     [Preserve(AllMembers = true)]
     public class DailyTimelineDataService
     {
@@ -19,9 +20,6 @@ namespace DAP_Mobile.DataService
 
         #region Constructor
 
-        /// <summary>
-        /// Creates an instance for the <see cref="DailyTimelineDataService"/> class.
-        /// </summary>
         public DailyTimelineDataService()
         {
         }
@@ -29,41 +27,26 @@ namespace DAP_Mobile.DataService
 
         #region properties
 
-        /// <summary>
-        /// Gets an instance of the <see cref="DailyTimelineDataService"/>.
-        /// </summary>
         public static DailyTimelineDataService Instance => instance ?? (instance = new DailyTimelineDataService());
 
-        /// <summary>
-        /// Gets or sets the value of pDaily Timeline page view model.
-        /// </summary>
-        public DailyTimelineViewModel DailyTimelineViewModel =>
-            (this.dailyTimelineViewModel = PopulateData<DailyTimelineViewModel>("timeline.json"));
+        public DailyTimelineViewModel DailyTimelineViewModel()
+        {
+            return this.dailyTimelineViewModel = GetViewModel().Result;
+        }
         #endregion
 
         #region Methods
 
-        /// <summary>
-        /// Populates the data for view model from json file.
-        /// </summary>
-        /// <typeparam name="T">Type of view model.</typeparam>
-        /// <param name="fileName">Json file to fetch data.</param>
-        /// <returns>Returns the view model object.</returns>
-        private static T PopulateData<T>(string fileName)
+        private async static Task<DailyTimelineViewModel> GetViewModel()
         {
-            var file = "DAP_Mobile.Data." + fileName;
+            DailyTimelineViewModel viewModel = new DailyTimelineViewModel();
 
-            var assembly = typeof(App).GetTypeInfo().Assembly;
-
-            T obj;
-
-            using (var stream = assembly.GetManifestResourceStream(file))
-            {
-                var serializer = new DataContractJsonSerializer(typeof(T));
-                obj = (T)serializer.ReadObject(stream);
-            }
-
-            return obj;
+            /*RestService rest = new RestService();
+            Dictionary<string, string> conditions = new Dictionary<string, string>();
+            conditions["date"] = new DateTime().ToUniversalTime().ToString("o");
+            viewModel.appointments = new ObservableCollection<Appointment>(await rest.GetAppointments());
+*/
+            return viewModel;
         }
         #endregion
     }

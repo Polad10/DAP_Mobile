@@ -1,4 +1,5 @@
 ﻿using DAP_Mobile.DataService;
+using DAP_Mobile.ViewModels.Dashboard;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
@@ -18,7 +19,7 @@ namespace DAP_Mobile.Views.Dashboard
         public DailyTimelinePage()
         {
             InitializeComponent();
-            this.BindingContext = DailyTimelineDataService.Instance.DailyTimelineViewModel;
+            this.BindingContext = new DailyTimelineViewModel();
         }
     }
 }
