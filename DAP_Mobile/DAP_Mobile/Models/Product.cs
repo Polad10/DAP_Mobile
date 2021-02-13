@@ -1,28 +1,23 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Runtime.Serialization;
-using System.Text;
-using Xamarin.Forms.Internals;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace DAP_Mobile.Models
 {
-    [Preserve(AllMembers = true)]
-    [DataContract]
     public class Product
     {
-        [DataMember(Name = "id")]
+        [JsonProperty("id")]
         public int Id { get; set; }
 
-        [DataMember(Name = "name")]
+        [JsonProperty("name")]
         public string Name { get; set; }
 
-        [DataMember(Name = "quantity")]
+        [JsonProperty("quantity")]
         public int Quantity { get; set; }
 
-        [DataMember(Name = "price")]
+        [JsonProperty("price")]
         public Decimal Price { get; set; }
 
-        [DataMember(Name = "treatment")]
+        [JsonProperty("treatment")]
         public Treatment Treatment { get; set; }
     }
 }

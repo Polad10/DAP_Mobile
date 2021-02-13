@@ -1,4 +1,4 @@
-﻿using DAP_Mobile.ViewModels.Dashboard;
+﻿using DAP_Mobile.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;

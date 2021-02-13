@@ -1,35 +1,29 @@
-﻿using System;
-using System.Runtime.Serialization;
-using Xamarin.Forms.Internals;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace DAP_Mobile.Models
 {
-    /// <summary>
-    /// Model for the Daily timeline and Company history page.
-    /// </summary>
-    [Preserve(AllMembers = true)]
-    [DataContract]
     public class Appointment
     {
-        [DataMember(Name = "id")]
+        [JsonProperty("id")]
         public int Id { get; set; }
 
-        [DataMember(Name = "date")]
+        [JsonProperty("date")]
         public DateTime Date { get; set; }
 
-        [DataMember(Name = "time")]
+        [JsonProperty("time")]
         public DateTime Time { get; set; }
 
-        [DataMember(Name = "icon")]
+        [JsonProperty("icon")]
         public string Icon { get; set; }
 
-        [DataMember(Name = "actions")]
+        [JsonProperty("actions")]
         public string Actions { get; set; }
 
-        [DataMember(Name = "status")]
+        [JsonProperty("status")]
         public string Status { get; set; }
 
-        [DataMember(Name = "treatment")]
+        [JsonProperty("treatment")]
         public Treatment Treatment { get; set; }
     }
 }

@@ -4,9 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
-namespace DAP_Mobile.ViewModels.Dashboard
+namespace DAP_Mobile.ViewModels
 {
-    public class DailyTimelineViewModel : BaseViewModel
+    public class DailyTimelineViewModel
     {
         public ObservableCollection<Appointment> Appointments { get; set; }
         public DailyTimelineViewModel()

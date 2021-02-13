@@ -1,34 +1,29 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Runtime.Serialization;
-using Xamarin.Forms.Internals;
+﻿using Newtonsoft.Json;
+using System;
 
 namespace DAP_Mobile.Models
 {
-    [Preserve(AllMembers = true)]
-    [DataContract]
     public class Treatment
     {
-        [DataMember(Name = "id")]
+        [JsonProperty("id")]
         public int Id { get; set; }
 
-        [DataMember(Name = "start_date")]
+        [JsonProperty("start_date")]
         public DateTime StartDate { get; set; }
 
-        [DataMember(Name = "end_date")]
-        public DateTime EndDate { get; set; }
+        [JsonProperty("end_date")]
+        public DateTime? EndDate { get; set; }
 
-        [DataMember(Name = "diagnosis")]
+        [JsonProperty("diagnosis")]
         public string Diagnosis { get; set; }
 
-        [DataMember(Name = "extra_info")]
+        [JsonProperty("extra_info")]
         public string ExtraInfo { get; set; }
 
-        [DataMember(Name = "status")]
+        [JsonProperty("status")]
         public string Status { get; set; }
 
-        [DataMember(Name = "patient")]
+        [JsonProperty("patient")]
         public Patient Patient { get; set; }
     }
 }

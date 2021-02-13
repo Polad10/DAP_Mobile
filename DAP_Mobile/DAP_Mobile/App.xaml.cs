@@ -1,4 +1,3 @@
-using DAP_Mobile.Services;
 using DAP_Mobile.Views;
 using System;
 using Xamarin.Forms;
@@ -15,7 +14,6 @@ namespace DAP_Mobile
 
             InitializeComponent();
 
-            DependencyService.Register<MockDataStore>();
             MainPage = new AppShell();
         }
 
