@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace DAP_Mobile.API
@@ -23,7 +24,7 @@ namespace DAP_Mobile.API
             payments = $"{baseUri}payments";
         }
 
-        public static string Appointments(Dictionary<string, string> conditions = null)
+        public static string Appointments(Lookup<string, string> conditions = null)
         {
             if(conditions == null)
             {
@@ -35,7 +36,7 @@ namespace DAP_Mobile.API
             return uri;
         }
 
-        public static string Treatments(Dictionary<string, string> conditions = null)
+        public static string Treatments(Lookup<string, string> conditions = null)
         {
             if (conditions == null)
             {
@@ -47,7 +48,7 @@ namespace DAP_Mobile.API
             return uri;
         }
 
-        public static string Patients(Dictionary<string, string> conditions = null)
+        public static string Patients(Lookup<string, string> conditions = null)
         {
             if (conditions == null)
             {
@@ -59,7 +60,7 @@ namespace DAP_Mobile.API
             return uri;
         }
 
-        public static string Payments(Dictionary<string, string> conditions = null)
+        public static string Payments(Lookup<string, string> conditions = null)
         {
             if (conditions == null)
             {
@@ -71,7 +72,7 @@ namespace DAP_Mobile.API
             return uri;
         }
 
-        public static string Products(Dictionary<string, string> conditions = null)
+        public static string Products(Lookup<string, string> conditions = null)
         {
             if (conditions == null)
             {
@@ -83,13 +84,16 @@ namespace DAP_Mobile.API
             return uri;
         }
 
-        private static string GetQuery(Dictionary<string, string> conditions)
+        private static string GetQuery(Lookup<string, string> conditions)
         {
             string query = "";
 
-            foreach(KeyValuePair<string, string> pair in conditions)
+            foreach(IGrouping<string, string> conditionGroup in conditions)
             {
-                query += $"{pair.Key}={pair.Value}&";
+                foreach(string val in conditionGroup)
+                {
+                    query += $"{conditionGroup.Key}={val}&";
+                }
             }
 
             query.TrimEnd('&');

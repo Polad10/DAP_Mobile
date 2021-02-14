@@ -8,6 +8,7 @@ using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
+using System.Linq;
 
 namespace DAP_Mobile.API
 {
@@ -19,7 +20,7 @@ namespace DAP_Mobile.API
             client = new HttpClient();
         }
 
-        public async Task<List<Appointment>> GetAppointments(Dictionary<string, string> conditions = null)
+        public async Task<List<Appointment>> GetAppointments(Lookup<string, string> conditions = null)
         {
             List<Appointment> appointments = new List<Appointment>();
             string uri = ApiUri.Appointments(conditions);
