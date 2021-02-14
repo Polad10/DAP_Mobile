@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAP_Mobile.Android", "DAP_M
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAP_Mobile.iOS", "DAP_Mobile\DAP_Mobile.iOS\DAP_Mobile.iOS.csproj", "{0EA4398E-4C88-46AD-AECA-654790C8C4D4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAP_Mobile", "DAP_Mobile\DAP_Mobile\DAP_Mobile.csproj", "{A94902CB-E7B8-4EE8-9989-6DCCE426457D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DAP_Mobile", "DAP_Mobile\DAP_Mobile\DAP_Mobile.csproj", "{A94902CB-E7B8-4EE8-9989-6DCCE426457D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
